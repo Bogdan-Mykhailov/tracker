@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import s from './Input.module.css'
+import play from '../../assets/play.svg'
 
 export const Input = (props) => {
 
@@ -7,7 +8,6 @@ export const Input = (props) => {
     const setTrackNameHandler = () => {
         props.addTitle(text)
         setText('')
-        props.startHandler()
     }
 
     const inputHandler = (e) => {
@@ -21,9 +21,9 @@ export const Input = (props) => {
     }
 
     return (
-        <div className={s.input}>
-            <input onKeyDown={onKeyDownHandler} type="text" value={text} onChange={inputHandler}/>
-            <button onClick={setTrackNameHandler}>+</button>
+        <div className={s.wrapper}>
+            <input className={s.input} placeholder='Enter tracker name' onKeyDown={onKeyDownHandler} type="text" value={text} onChange={inputHandler}/>
+            <img onClick={setTrackNameHandler} className={s.playIcon} src={play} alt="play"/>
         </div>
     );
 };

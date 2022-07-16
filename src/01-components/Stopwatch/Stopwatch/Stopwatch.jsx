@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {Timer} from "./Timer.jsx";
-import {ControlButtons} from "./ControlButtons.jsx";
+import {Timer} from "../Timer/Timer.jsx";
+import {ControlButtons} from "../ControlBtn/ControlButtons.jsx";
+import s from './Stopwatch.module.css'
 
-export const Stopwatch = () => {
+export const Stopwatch = (props) => {
 
     const [isActive, setIsActive] = useState(false);
     const [isPaused, setIsPaused] = useState(true);
@@ -32,20 +33,15 @@ export const Stopwatch = () => {
         setIsPaused(!isPaused);
     };
 
-    const deleteHandler = () => {
-        setIsActive(false);
-        setTime(0);
-    };
-
     return (
-        <div>
+        <div className={s.wrapper}>
             <Timer time={time} />
             <ControlButtons
                 active={isActive}
                 isPaused={isPaused}
                 startHandler={startHandler}
                 pauseResumeHandler={pauseResumeHandler}
-                deleteHandler={deleteHandler}
+                removeTracker={props.removeTracker}
             />
         </div>
     );

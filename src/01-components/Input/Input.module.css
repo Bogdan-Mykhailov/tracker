@@ -1,3 +1,37 @@
-.input {
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
+.input {
+  height: 40px;
+  width: 500px;
+  border-radius: 50px;
+  border: 1px solid black;
+  outline: none;
+  padding-left: 20px;
+  font-family: MuseoSansCyrlRegular, sans-serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.playIcon {
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  transition: all 0.5s ease;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(33%) saturate(864%) hue-rotate(87deg) brightness(88%) contrast(84%);
+}
+
+.playIcon:hover {
+  transform: scale(0.95);
+}
+
+
+.playIcon:active {
+  transform: scale(1.1);
 }

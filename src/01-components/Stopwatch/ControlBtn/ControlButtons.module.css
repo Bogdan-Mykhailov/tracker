@@ -1,0 +1,14 @@
+.controlButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+}
+
+
+.icons {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+}
